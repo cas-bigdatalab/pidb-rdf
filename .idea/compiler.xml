@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pidb-rdf-request" />
+        <module name="pidbrdfengine" />
+        <module name="pidbrdfimport" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pidb-rdf" target="1.5" />
+      <module name="pidb-rdf-request" target="1.5" />
+      <module name="pidbrdfengine" target="1.5" />
+      <module name="pidbrdfimport" target="7" />
+      <module name="pidbrdfrequest" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
