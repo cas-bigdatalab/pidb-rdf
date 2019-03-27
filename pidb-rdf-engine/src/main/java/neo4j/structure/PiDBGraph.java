@@ -1,7 +1,7 @@
 package neo4j.structure;
 
+import neo4j.api.Neo4jGraphAPI;
 import org.apache.commons.configuration.Configuration;
-import org.neo4j.tinkerpop.api.Neo4jGraphAPI;
 
 public class PiDBGraph extends Neo4jGraph {
     protected PiDBGraph(Neo4jGraphAPI baseGraph, Configuration configuration) {

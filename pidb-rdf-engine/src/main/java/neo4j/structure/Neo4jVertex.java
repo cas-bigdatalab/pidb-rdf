@@ -18,13 +18,13 @@
  */
 package neo4j.structure;
 
+import neo4j.api.Neo4jNode;
+import neo4j.api.Neo4jRelationship;
 import org.apache.tinkerpop.gremlin.structure.*;
 import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
 import org.apache.tinkerpop.gremlin.structure.util.wrapped.WrappedVertex;
 import org.apache.tinkerpop.gremlin.util.iterator.IteratorUtils;
-import org.neo4j.tinkerpop.api.Neo4jNode;
-import org.neo4j.tinkerpop.api.Neo4jRelationship;
 
 import java.util.Collections;
 import java.util.Iterator;

@@ -49,7 +49,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.tinkerpop:neo4j-gremlin:3.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.neo4j:neo4j-tinkerpop-api:0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.neo4j:neo4j-tinkerpop-api:0.1" level="project" />
     <orderEntry type="library" name="Maven: pidb:pidb-interface:0.1" level="project" />
     <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.10" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:15.0" level="project" />

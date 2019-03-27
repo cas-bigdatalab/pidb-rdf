@@ -18,10 +18,10 @@
  */
 package neo4j.structure;
 
+import neo4j.api.Neo4jGraphAPI;
 import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.util.GraphVariableHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
-import org.neo4j.tinkerpop.api.Neo4jGraphAPI;
 
 import java.util.HashSet;
 import java.util.Optional;

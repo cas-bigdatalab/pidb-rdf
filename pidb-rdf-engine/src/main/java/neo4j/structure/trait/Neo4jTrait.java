@@ -18,6 +18,8 @@
  */
 package neo4j.structure.trait;
 
+import neo4j.api.Neo4jNode;
+import neo4j.api.Neo4jRelationship;
 import neo4j.structure.Neo4jGraph;
 import neo4j.structure.Neo4jVertex;
 import neo4j.structure.Neo4jVertexProperty;
@@ -25,9 +27,6 @@ import org.apache.tinkerpop.gremlin.process.traversal.step.util.HasContainer;
 import org.apache.tinkerpop.gremlin.structure.Property;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.apache.tinkerpop.gremlin.structure.VertexProperty;
-import org.neo4j.tinkerpop.api.Neo4jNode;
-import org.neo4j.tinkerpop.api.Neo4jRelationship;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;

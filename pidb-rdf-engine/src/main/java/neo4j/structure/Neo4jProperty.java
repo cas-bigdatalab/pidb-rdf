@@ -18,11 +18,11 @@
  */
 package neo4j.structure;
 
+import neo4j.api.Neo4jEntity;
 import org.apache.tinkerpop.gremlin.structure.Element;
 import org.apache.tinkerpop.gremlin.structure.Property;
 import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
-import org.neo4j.tinkerpop.api.Neo4jEntity;
 
 /**
  * @author Stephen Mallette (http://stephen.genoprime.com)

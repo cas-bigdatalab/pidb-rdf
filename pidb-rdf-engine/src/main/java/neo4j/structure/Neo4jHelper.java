@@ -18,8 +18,9 @@
  */
 package neo4j.structure;
 
+import neo4j.api.Neo4jDirection;
+import neo4j.api.Neo4jNode;
 import org.apache.tinkerpop.gremlin.structure.Direction;
-import org.neo4j.tinkerpop.api.Neo4jNode;
 
 /**
  * @author Marko A. Rodriguez (http://markorodriguez.com)
@@ -31,13 +32,13 @@ public final class Neo4jHelper {
     private Neo4jHelper() {
     }
 
-    public static org.neo4j.tinkerpop.api.Neo4jDirection mapDirection(final Direction direction) {
+    public static Neo4jDirection mapDirection(final Direction direction) {
         if (direction.equals(Direction.OUT))
-            return org.neo4j.tinkerpop.api.Neo4jDirection.OUTGOING;
+            return Neo4jDirection.OUTGOING;
         else if (direction.equals(Direction.IN))
-            return org.neo4j.tinkerpop.api.Neo4jDirection.INCOMING;
+            return Neo4jDirection.INCOMING;
         else
-            return org.neo4j.tinkerpop.api.Neo4jDirection.BOTH;
+            return Neo4jDirection.BOTH;
     }
 
     public static boolean isDeleted(final Neo4jNode node) {

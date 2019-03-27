@@ -18,6 +18,10 @@
  */
 package neo4j.structure.trait;
 
+import neo4j.api.Neo4jDirection;
+import neo4j.api.Neo4jGraphAPI;
+import neo4j.api.Neo4jNode;
+import neo4j.api.Neo4jRelationship;
 import neo4j.process.traversal.LabelP;
 import neo4j.structure.*;
 import org.apache.tinkerpop.gremlin.process.traversal.Compare;
@@ -26,10 +30,6 @@ import org.apache.tinkerpop.gremlin.structure.*;
 import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;
 import org.apache.tinkerpop.gremlin.structure.util.wrapped.WrappedGraph;
 import org.apache.tinkerpop.gremlin.util.iterator.IteratorUtils;
-import org.neo4j.tinkerpop.api.Neo4jDirection;
-import org.neo4j.tinkerpop.api.Neo4jGraphAPI;
-import org.neo4j.tinkerpop.api.Neo4jNode;
-import org.neo4j.tinkerpop.api.Neo4jRelationship;
 
 import java.util.Collections;
 import java.util.Iterator;

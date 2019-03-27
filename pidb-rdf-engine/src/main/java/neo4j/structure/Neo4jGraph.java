@@ -18,6 +18,7 @@
  */
 package neo4j.structure;
 
+import neo4j.api.*;
 import neo4j.process.traversal.step.sideEffect.CypherStartStep;
 import neo4j.process.traversal.strategy.optimization.Neo4jGraphStepStrategy;
 import neo4j.process.util.Neo4jCypherIterator;
