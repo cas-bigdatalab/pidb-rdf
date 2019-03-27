@@ -14,8 +14,8 @@
     <bytecodeTargetLevel>
       <module name="pidb-rdf" target="1.5" />
       <module name="pidb-rdf-request" target="1.5" />
-      <module name="pidbrdfengine" target="1.5" />
-      <module name="pidbrdfimport" target="7" />
+      <module name="pidbrdfengine" target="8" />
+      <module name="pidbrdfimport" target="1.8" />
       <module name="pidbrdfrequest" target="1.5" />
     </bytecodeTargetLevel>
   </component>

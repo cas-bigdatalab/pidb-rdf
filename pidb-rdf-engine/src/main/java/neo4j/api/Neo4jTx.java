@@ -19,9 +19,7 @@
 package neo4j.api;
 
 public interface Neo4jTx extends AutoCloseable{
-
     void failure();
-
     void success();
     void close();
 }

@@ -28,7 +28,7 @@ public interface Neo4jFactory {
     public static class Builder {
         public static Neo4jGraphAPI open(String path, Map<String, String> config) {
             try {
-                Neo4jFactory factory = (Neo4jFactory) Class.forName("org.neo4j.tinkerpop.api.impl.Neo4jFactoryImpl").newInstance();
+                Neo4jFactory factory = (Neo4jFactory) Class.forName("neo4j.api.impl.Neo4jFactoryImpl").newInstance();
                 return factory.newGraphDatabase(path, config);
             } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
                 throw new RuntimeException("Error instantiating Neo4j Database for "+path,e);
