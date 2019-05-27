@@ -18,7 +18,7 @@
  */
 package neo4j.structure;
 
-import neo4j.api.Neo4jEntity;
+import neo4j.structure.api.Neo4jEntity;
 import org.apache.tinkerpop.gremlin.structure.Element;
 import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;

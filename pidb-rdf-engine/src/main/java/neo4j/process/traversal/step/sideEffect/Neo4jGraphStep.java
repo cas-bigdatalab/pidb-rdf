@@ -18,7 +18,7 @@
  */
 package neo4j.process.traversal.step.sideEffect;
 
-import org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph;
+import neo4j.structure.Neo4jGraph;
 import org.apache.tinkerpop.gremlin.process.traversal.P;
 import org.apache.tinkerpop.gremlin.process.traversal.step.HasContainerHolder;
 import org.apache.tinkerpop.gremlin.process.traversal.step.map.GraphStep;

@@ -18,12 +18,13 @@
  */
 package neo4j.structure.trait;
 
-import neo4j.api.Neo4jDirection;
-import neo4j.api.Neo4jGraphAPI;
-import neo4j.api.Neo4jNode;
-import neo4j.api.Neo4jRelationship;
+
 import neo4j.process.traversal.LabelP;
 import neo4j.structure.*;
+import neo4j.structure.api.Neo4jDirection;
+import neo4j.structure.api.Neo4jGraphAPI;
+import neo4j.structure.api.Neo4jNode;
+import neo4j.structure.api.Neo4jRelationship;
 import org.apache.tinkerpop.gremlin.process.traversal.Compare;
 import org.apache.tinkerpop.gremlin.process.traversal.step.util.HasContainer;
 import org.apache.tinkerpop.gremlin.structure.*;

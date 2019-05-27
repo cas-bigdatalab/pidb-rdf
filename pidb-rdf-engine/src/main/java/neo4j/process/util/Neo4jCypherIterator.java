@@ -21,8 +21,8 @@ package neo4j.process.util;
 import neo4j.structure.Neo4jEdge;
 import neo4j.structure.Neo4jGraph;
 import neo4j.structure.Neo4jVertex;
-import org.neo4j.tinkerpop.api.Neo4jNode;
-import org.neo4j.tinkerpop.api.Neo4jRelationship;
+import neo4j.structure.api.Neo4jNode;
+import neo4j.structure.api.Neo4jRelationship;
 
 import java.util.Iterator;
 import java.util.Map;

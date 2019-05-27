@@ -24,44 +24,24 @@
     </build>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>sparql-gremlin</artifactId>
-            <version>3.4.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/gremlin-core -->
-        <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>gremlin-core</artifactId>
-            <version>3.4.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/neo4j-gremlin -->
-        <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>neo4j-gremlin</artifactId>
-            <version>3.4.1</version>
-            <scope>test</scope>
-        </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.neo4j/neo4j -->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j</artifactId>
-            <version>${neo4j.version}</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-kernel</artifactId>
-            <version>${neo4j.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
+            <groupId>org.apache.tinkerpop</groupId>
+            <artifactId>gremlin-core</artifactId>
+            <version>3.4.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.jena/jena-arq -->
         <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-io</artifactId>
-            <version>${neo4j.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-arq</artifactId>
+            <version>3.11.0</version>
         </dependency>
+
 
     </dependencies>
 

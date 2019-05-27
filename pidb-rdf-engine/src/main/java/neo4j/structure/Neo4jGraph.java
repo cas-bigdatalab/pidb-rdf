@@ -18,10 +18,10 @@
  */
 package neo4j.structure;
 
-import neo4j.api.*;
 import neo4j.process.traversal.step.sideEffect.CypherStartStep;
 import neo4j.process.traversal.strategy.optimization.Neo4jGraphStepStrategy;
 import neo4j.process.util.Neo4jCypherIterator;
+import neo4j.structure.api.*;
 import neo4j.structure.trait.MultiMetaNeo4jTrait;
 import neo4j.structure.trait.Neo4jTrait;
 import neo4j.structure.trait.NoMultiNoMetaNeo4jTrait;
@@ -39,7 +39,6 @@ import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
 import org.apache.tinkerpop.gremlin.structure.util.TransactionException;
 import org.apache.tinkerpop.gremlin.structure.util.wrapped.WrappedGraph;
 import org.apache.tinkerpop.gremlin.util.iterator.IteratorUtils;
-import org.neo4j.tinkerpop.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,7 +58,7 @@ import java.util.stream.Stream;
 @Graph.OptIn(Graph.OptIn.SUITE_STRUCTURE_INTEGRATE)
 @Graph.OptIn(Graph.OptIn.SUITE_PROCESS_STANDARD)
 @Graph.OptIn("org.apache.tinkerpop.gremlin.neo4j.NativeNeo4jSuite")
-public class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
+public final class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(Neo4jGraph.class);
 
@@ -91,16 +90,16 @@ public class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
         this.baseGraph = baseGraph;
         this.neo4jGraphVariables = new Neo4jGraphVariables(this);
         this.tx().readWrite();
-        final Optional<Boolean> hasMultiProperties = this.neo4jGraphVariables.get(Graph.Hidden.hide(CONFIG_MULTI_PROPERTIES));
-        final Optional<Boolean> hasMetaProperties = this.neo4jGraphVariables.get(Graph.Hidden.hide(CONFIG_META_PROPERTIES));
+        final Optional<Boolean> hasMultiProperties = this.neo4jGraphVariables.get(Hidden.hide(CONFIG_MULTI_PROPERTIES));
+        final Optional<Boolean> hasMetaProperties = this.neo4jGraphVariables.get(Hidden.hide(CONFIG_META_PROPERTIES));
         boolean supportsMetaProperties = hasMetaProperties.orElse(this.configuration.getBoolean(CONFIG_META_PROPERTIES, false));
         boolean supportsMultiProperties = hasMultiProperties.orElse(this.configuration.getBoolean(CONFIG_MULTI_PROPERTIES, false));
         if (supportsMultiProperties != supportsMetaProperties)
             throw new IllegalArgumentException(this.getClass().getSimpleName() + " currently supports either both meta-properties and multi-properties or neither");
         if (!hasMultiProperties.isPresent())
-            this.neo4jGraphVariables.set(Graph.Hidden.hide(CONFIG_MULTI_PROPERTIES), supportsMultiProperties);
+            this.neo4jGraphVariables.set(Hidden.hide(CONFIG_MULTI_PROPERTIES), supportsMultiProperties);
         if (!hasMetaProperties.isPresent())
-            this.neo4jGraphVariables.set(Graph.Hidden.hide(CONFIG_META_PROPERTIES), supportsMetaProperties);
+            this.neo4jGraphVariables.set(Hidden.hide(CONFIG_META_PROPERTIES), supportsMetaProperties);
         this.trait = supportsMultiProperties ? MultiMetaNeo4jTrait.instance() : NoMultiNoMetaNeo4jTrait.instance();
         if (supportsMultiProperties)
             LOGGER.warn(this.getClass().getSimpleName() + " multi/meta-properties feature is considered experimental and should not be used in a production setting until this warning is removed");
@@ -123,10 +122,10 @@ public class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
      * Open a new {@link Neo4jGraph} instance.
      *
      * @param configuration the configuration for the instance
-     * @return a newly opened {@link org.apache.tinkerpop.gremlin.structure.Graph}
+     * @return a newly opened {@link Graph}
      */
     public static Neo4jGraph open(final Configuration configuration) {
-        if (null == configuration) throw Graph.Exceptions.argumentCanNotBeNull("configuration");
+        if (null == configuration) throw Exceptions.argumentCanNotBeNull("configuration");
         if (!configuration.containsKey(CONFIG_DIRECTORY))
             throw new IllegalArgumentException(String.format("Neo4j configuration requires that the %s be set", CONFIG_DIRECTORY));
         return new Neo4jGraph(configuration);
@@ -233,12 +232,12 @@ public class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
 
     @Override
     public <C extends GraphComputer> C compute(final Class<C> graphComputerClass) {
-        throw Graph.Exceptions.graphComputerNotSupported();
+        throw Exceptions.graphComputerNotSupported();
     }
 
     @Override
     public GraphComputer compute() {
-        throw Graph.Exceptions.graphComputerNotSupported();
+        throw Exceptions.graphComputerNotSupported();
     }
 
     @Override
@@ -300,8 +299,7 @@ public class Neo4jGraph implements Graph, WrappedGraph<Neo4jGraphAPI> {
     public <S, E> GraphTraversal<S, E> cypher(final String query, final Map<String, Object> parameters) {
         this.tx().readWrite();
         final GraphTraversal.Admin<S, E> traversal = new DefaultGraphTraversal<>(this);
-        traversal.addStep(new CypherStartStep(traversal, query,
-                new Neo4jCypherIterator<>((Iterator) this.baseGraph.execute(query, parameters), this)));
+        traversal.addStep(new CypherStartStep(traversal, query, new Neo4jCypherIterator<>((Iterator) this.baseGraph.execute(query, parameters), this)));
         return traversal;
     }
 

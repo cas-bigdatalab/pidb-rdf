@@ -18,7 +18,7 @@
  */
 package neo4j.structure;
 
-import neo4j.api.Neo4jGraphAPI;
+import neo4j.structure.api.Neo4jGraphAPI;
 import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.util.GraphVariableHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
@@ -66,7 +66,7 @@ public final class Neo4jGraphVariables implements Graph.Variables {
         try {
             this.baseGraph.setProperty(key, value);
         } catch (final IllegalArgumentException e) {
-            throw Graph.Variables.Exceptions.dataTypeOfVariableValueNotSupported(value, e);
+            throw Exceptions.dataTypeOfVariableValueNotSupported(value, e);
         }
     }
 

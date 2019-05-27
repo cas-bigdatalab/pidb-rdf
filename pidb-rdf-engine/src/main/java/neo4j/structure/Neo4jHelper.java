@@ -18,8 +18,8 @@
  */
 package neo4j.structure;
 
-import neo4j.api.Neo4jDirection;
-import neo4j.api.Neo4jNode;
+import neo4j.structure.api.Neo4jDirection;
+import neo4j.structure.api.Neo4jNode;
 import org.apache.tinkerpop.gremlin.structure.Direction;
 
 /**

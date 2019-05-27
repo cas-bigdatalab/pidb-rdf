@@ -18,8 +18,8 @@
  */
 package neo4j.structure;
 
-import neo4j.api.Neo4jNode;
-import neo4j.api.Neo4jRelationship;
+import neo4j.structure.api.Neo4jNode;
+import neo4j.structure.api.Neo4jRelationship;
 import org.apache.tinkerpop.gremlin.structure.*;
 import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;

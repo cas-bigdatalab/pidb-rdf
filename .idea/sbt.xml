@@ -10,7 +10,7 @@
             <option value="$PROJECT_DIR$/pidb-rdf-request/project" />
           </set>
         </option>
-        <option name="sbtVersion" value="1.2.1" />
+        <option name="sbtVersion" value="1.2.7" />
         <option name="useAutoImport" value="true" />
       </SbtProjectSettings>
     </option>

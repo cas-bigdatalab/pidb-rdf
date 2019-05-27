@@ -18,7 +18,7 @@
  */
 package neo4j.structure;
 
-import neo4j.api.Neo4jRelationship;
+import neo4j.structure.api.Neo4jRelationship;
 import org.apache.tinkerpop.gremlin.structure.Direction;
 import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Property;
@@ -27,7 +27,6 @@ import org.apache.tinkerpop.gremlin.structure.util.ElementHelper;
 import org.apache.tinkerpop.gremlin.structure.util.StringFactory;
 import org.apache.tinkerpop.gremlin.structure.util.wrapped.WrappedEdge;
 import org.apache.tinkerpop.gremlin.util.iterator.IteratorUtils;
-
 import java.util.Iterator;
 
 /**
